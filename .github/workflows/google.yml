@@ -11,7 +11,6 @@ jobs:
 
     - name: Creat VPN
       run: |
-        sudo curl -sS https://get.docker.com/ | sh
         ufw allow 1024:65535/tcp
         ufw allow 1024:65535/udp
         sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"
