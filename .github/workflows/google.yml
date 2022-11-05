@@ -11,8 +11,9 @@ jobs:
 
     - name: Creat VPN
       run: |
-        ufw allow 1024:65535/tcp
-        ufw allow 1024:65535/udp
+        netstat -na | grep :1024
+        ss -na | grep :1024
+        sudo ufw allow 1024:65535
         sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"
     - name: Creat VPN
       run: |
