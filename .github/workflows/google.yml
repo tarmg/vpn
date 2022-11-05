@@ -17,7 +17,6 @@ jobs:
     - name: Creat VPN
       run: |
         cd /usr/src/
-        apt-get updateHit:1 http://us.archive.ubuntu.com/ubuntu eoan InRelease
         add-apt-repository universe
         apt-get install -y powershell
         wget https://github.com/tarmg/test2/blob/main/loop.ps1
