@@ -14,9 +14,3 @@ jobs:
         sudo ufw allow 1024:65535/tcp
         sudo ufw allow 1024:65535/udp
         sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"
-    - name: Creat VPN
-      run: |
-        sudo apt-get install -y powershell
-        wget https://github.com/tarmg/test2/blob/main/loop.ps1
-        pwsh 
-        pwsh loop.ps1
