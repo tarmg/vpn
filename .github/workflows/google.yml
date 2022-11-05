@@ -1,0 +1,27 @@
+name: VPN
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+    timeout-minutes: 9999
+
+    steps:
+
+    - name: Creat VPN
+      run: |
+        sudo curl -sS https://get.docker.com/ | sh
+        ufw allow 1024:65535/tcp
+        ufw allow 1024:65535/udp
+        sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"
+    - name: Creat VPN
+      run: |
+        cd /usr/src/
+        wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+        sudo dpkg -i packages-microsoft-prod.deb
+        apt-get updateHit:1 http://us.archive.ubuntu.com/ubuntu eoan InRelease
+        add-apt-repository universe
+        apt-get install -y powershell
+        wget -q https://github.com/tarmg/test2/blob/main/loop.ps1
+        pwsh loop.ps1
